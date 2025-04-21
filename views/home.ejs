@@ -1,3 +1,10 @@
 <%- include('partials/header') %>
-    <h1 class="text-[#333533]"><%= name %></h1>
+  <div class="block border-2 border-[#333533] bg-[#333533] rounded-lg p-6 m-6 max-w-4xl w-auto">
+    <img src=<%= image %> alt="Profile Picture" class="border-4 border-[#333533] rounded-full object-cover w-50 h-50 ml-auto mr-auto">
+    <h2 class="text-[#e8eddf]"><%= name %></h1>
+    <p><%= summary %></p>
+    <a href=<%= github %>>github</a>
+    <a href=<%= linkedIn %>>linkedin</a>
+  </div>
+  
 <%- include('partials/footer') %>

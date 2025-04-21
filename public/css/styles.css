@@ -11,6 +11,7 @@
     --color-gray-300: oklch(87.2% 0.01 258.338);
     --color-white: #fff;
     --spacing: 0.25rem;
+    --container-4xl: 56rem;
     --text-xl: 1.25rem;
     --text-xl--line-height: calc(1.75 / 1.25);
     --text-3xl: 1.875rem;
@@ -20,6 +21,7 @@
     --font-weight-thin: 100;
     --font-weight-medium: 500;
     --font-weight-bold: 700;
+    --radius-lg: 0.5rem;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
   }
@@ -173,20 +175,56 @@
   .m-0 {
     margin: calc(var(--spacing) * 0);
   }
+  .m-6 {
+    margin: calc(var(--spacing) * 6);
+  }
+  .mx-auto {
+    margin-inline: auto;
+  }
+  .mr-auto {
+    margin-right: auto;
+  }
+  .mb-4 {
+    margin-bottom: calc(var(--spacing) * 4);
+  }
+  .ml-auto {
+    margin-left: auto;
+  }
+  .block {
+    display: block;
+  }
   .flex {
     display: flex;
   }
   .table {
     display: table;
   }
+  .h-32 {
+    height: calc(var(--spacing) * 32);
+  }
+  .h-50 {
+    height: calc(var(--spacing) * 50);
+  }
   .min-h-screen {
     min-height: 100vh;
+  }
+  .w-32 {
+    width: calc(var(--spacing) * 32);
+  }
+  .w-50 {
+    width: calc(var(--spacing) * 50);
+  }
+  .w-auto {
+    width: auto;
   }
   .w-full {
     width: 100%;
   }
   .w-screen {
     width: 100vw;
+  }
+  .max-w-4xl {
+    max-width: var(--container-4xl);
   }
   .flex-grow {
     flex-grow: 1;
@@ -223,18 +261,38 @@
       margin-inline-end: calc(calc(var(--spacing) * 6) * calc(1 - var(--tw-space-x-reverse)));
     }
   }
+  .rounded-full {
+    border-radius: calc(infinity * 1px);
+  }
+  .rounded-lg {
+    border-radius: var(--radius-lg);
+  }
   .border {
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
+  .border-2 {
+    border-style: var(--tw-border-style);
+    border-width: 2px;
+  }
+  .border-4 {
+    border-style: var(--tw-border-style);
+    border-width: 4px;
+  }
+  .border-\[\#333533\] {
+    border-color: #333533;
+  }
   .bg-\[\#242423\] {
     background-color: #242423;
+  }
+  .bg-\[\#333533\] {
+    background-color: #333533;
   }
   .bg-\[\#f5cb5c\] {
     background-color: #f5cb5c;
   }
-  .bg-gray-300 {
-    background-color: var(--color-gray-300);
+  .object-cover {
+    object-fit: cover;
   }
   .p-0 {
     padding: calc(var(--spacing) * 0);
@@ -287,9 +345,6 @@
   .text-\[\#e8eddf\] {
     color: #e8eddf;
   }
-  .text-gray-50 {
-    color: var(--color-gray-50);
-  }
   .text-white {
     color: var(--color-white);
   }
@@ -304,13 +359,6 @@
     &:hover {
       @media (hover: hover) {
         color: #cfdbd5;
-      }
-    }
-  }
-  .hover\:text-gray-300 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-gray-300);
       }
     }
   }
