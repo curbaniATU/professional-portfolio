@@ -281,6 +281,9 @@
     --tw-font-weight: var(--font-weight-thin);
     font-weight: var(--font-weight-thin);
   }
+  .text-\[\#333533\] {
+    color: #333533;
+  }
   .text-\[\#e8eddf\] {
     color: #e8eddf;
   }
