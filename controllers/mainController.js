@@ -10,3 +10,19 @@ exports.home = (req, res) => {
     linkedIn: 'https://www.linkedin.com/in/caleb-urbani-030645354/'
    });
 }
+
+exports.education = async (req, res) => {
+  const Education = require('../models/Education');
+  try {
+    const education = await Education.find({});
+    console.log(education);
+    res.render('education', { 
+      title: 'Education',
+      logo: 'images/ATU_LOGO.png', 
+      education: education 
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Error retrieving education data');
+  }
+}

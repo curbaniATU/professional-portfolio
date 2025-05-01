@@ -1,0 +1,15 @@
+<%- include('./partials/header') %>
+
+  <div class="flex flex-row justify-center items-center bg-[#f5cb5c] p-12 space-x-4">
+    <% education.forEach(edu => { %>
+      <div class="block border-2 border-[#333533] bg-[#333533] rounded-lg p-10 m-6 max-w-xl w-xl">
+        <h2 class="text-3xl underline font-bold font-mono text-[#e8eddf]"><%= edu.course %></h2>
+        <h1 class="text-2xl font-bold font-mono text-[#e8eddf]"><%= edu.className %></h1>
+        <p class="text-xl text-[#e8eddf]"><%= edu.semester %> at <%= edu.university %></p>
+        <p class="text text-[#e8eddf] mt-4"><%= edu.description %></p>
+      </div>
+    <% }) %>
+  </div>
+</section>
+
+<%- include('./partials/footer') %>
