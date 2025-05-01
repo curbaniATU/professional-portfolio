@@ -26,3 +26,19 @@ exports.education = async (req, res) => {
     res.status(500).send('Error retrieving education data');
   }
 }
+
+exports.projects = async (req, res) => {
+  const Projects = require('../models/Projects');
+  try {
+    const projects = await Projects.find({});
+    console.log(projects);
+    res.render('projects', { 
+      projects: projects,
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Error retrieving projects data');
+  }
+}
+
+
