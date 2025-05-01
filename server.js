@@ -1,12 +1,15 @@
 const express = require('express');
 const cors = require('cors');
+const mongoConnect = require('./config/db');
 const indexRouter = require('./routes/index');
+const { mongo } = require('mongoose');
 
 const app = express();
 const PORT = 5000;
 
 app.use(cors());
 app.use(express.json());
+mongoConnect();
 app.use(express.static('public'));
 app.use('/', indexRouter);
 
