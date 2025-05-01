@@ -32,7 +32,7 @@ exports.projects = async (req, res) => {
   try {
     const projects = await Projects.find({});
     console.log(projects);
-    res.render('projects', { 
+    res.render('projects', {title: 'Projects', 
       projects: projects,
     });
   } catch (err) {

@@ -8,4 +8,4 @@ const ProjectsSchema = new mongoose.Schema({
 });
 
 
-module.exports = mongoose.model('Projects', ProjectsSchema, 'projects');
+module.exports = mongoose.model('Project', ProjectsSchema, 'projects');
