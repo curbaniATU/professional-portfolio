@@ -15,7 +15,6 @@ exports.education = async (req, res) => {
   const Education = require('../models/Education');
   try {
     const education = await Education.find({});
-    console.log(education);
     res.render('education', { 
       title: 'Education',
       logo: 'images/ATU_LOGO.png', 
@@ -31,7 +30,6 @@ exports.projects = async (req, res) => {
   const Projects = require('../models/Projects');
   try {
     const projects = await Projects.find({});
-    console.log(projects);
     res.render('projects', {title: 'Projects', 
       projects: projects,
     });
@@ -41,4 +39,15 @@ exports.projects = async (req, res) => {
   }
 }
 
-
+exports.skills = async (req, res) => {
+  const Skills = require('../models/Skills');
+  try {
+    const skills = await Skills.find({});
+    res.render('skills', {title: 'Skills', 
+      skills: skills,
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Error retrieving skills data');
+  }
+}
