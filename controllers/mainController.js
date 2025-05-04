@@ -51,3 +51,22 @@ exports.skills = async (req, res) => {
     res.status(500).send('Error retrieving skills data');
   }
 }
+
+exports.contact = (req, res) => {
+  res.render('contact', { title: 'Contact' });
+};
+
+exports.contactForm = async (req, res) => {
+  const ContactMessage = require('../models/ContactMessage');
+  const { name, email, message } = req.body;
+
+  try {
+    const contactMessage = new ContactMessage({ name, email, message });
+    await contactMessage.save();
+    console.log('Contact message saved:', contactMessage);
+    res.redirect('/contact');
+  } catch (err) {
+    console.error('Error saving contact message:', err);
+    return res.status(500).send('Error saving contact message');
+  }
+};

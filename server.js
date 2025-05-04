@@ -11,6 +11,7 @@ app.use(cors());
 app.use(express.json());
 mongoConnect();
 app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }));
 app.use('/', indexRouter);
 
 app.set('view engine', 'ejs');
